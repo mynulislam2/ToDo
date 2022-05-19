@@ -25,15 +25,7 @@ const Login = () => {
         return <div style={{ height: "100vh" }} className='d-flex justify-content-center align-items-center'> <Spinner className='me-3' animation="border" variant="danger" />  </div>
             ;
     }
-    if (SignInUser) {
-        axios.post('https://enigmatic-harbor-97729.herokuapp.com/login', { email: user.email })
-            .then(result => {
-                const data = result.data
-                localStorage.setItem("accessToken", data.accesToken)
-                navigate(from, { replace: true });
-            })
 
-    }
 
     const HandleLogin = (event) => {
         event.preventDefault()

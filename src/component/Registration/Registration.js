@@ -17,6 +17,7 @@ const Registration = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
+
     const HandleSignUp = (event) => {
         event.preventDefault()
         const email = event.target.email.value
@@ -26,7 +27,6 @@ const Registration = () => {
         if (checked && password === confirmPassword) {
             createUserWithEmailAndPassword(email, password)
             setErrors('')
-            navigate('/home');
 
 
         }
@@ -40,6 +40,7 @@ const Registration = () => {
     }
     if (!error && user) {
         swal("Successfully Registered!", "check your email to verify");
+        navigate('/')
     } 
     return (
         <Container>
